@@ -2,3 +2,4 @@
 /venv/
 .idea
 uwsgi_params
+/adminpanel/static/

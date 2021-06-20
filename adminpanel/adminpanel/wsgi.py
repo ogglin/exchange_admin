@@ -8,9 +8,11 @@ https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/
 """
 
 import os
+import sys
 
 from django.core.wsgi import get_wsgi_application
 
+sys.path.append('/var/www/exchange_admin')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'adminpanel.settings')
 
 application = get_wsgi_application()
