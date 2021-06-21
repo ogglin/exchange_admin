@@ -4,7 +4,7 @@ from django.core.management.base import BaseCommand
 
 # from exchange_pairs.tests import set_new_token
 # from exchange_comparison.test_utils import init_test
-from utils.main import init_utest
+from models.management.commands.utils import init_utest
 
 
 class Command(BaseCommand):

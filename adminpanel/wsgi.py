@@ -1,5 +1,5 @@
 """
-WSGI config for adminpanel project.
+WSGI config for adminpanel1 project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -13,7 +13,6 @@ import sys
 from django.core.wsgi import get_wsgi_application
 
 sys.path.append('/var/www/exchange_admin')
-sys.path.append('/var/www/exchange_admin/adminpanel')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'adminpanel.settings')
 
 application = get_wsgi_application()
