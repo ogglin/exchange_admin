@@ -13,6 +13,7 @@ import sys
 from django.core.wsgi import get_wsgi_application
 
 sys.path.append('/var/www/exchange_admin')
+sys.path.append('/var/www/exchange_admin/adminpanel')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'adminpanel.settings')
 
 application = get_wsgi_application()
