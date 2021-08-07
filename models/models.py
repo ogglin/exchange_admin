@@ -367,6 +367,7 @@ class Settings(models.Model):
     gas_fast = models.IntegerField()
     gas_normal = models.IntegerField()
     currency_usd = models.FloatField(blank=True, null=True)
+    min_profit = models.FloatField(help_text='минимальный профит в USDT')
 
     class Meta:
         managed = False
