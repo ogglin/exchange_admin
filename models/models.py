@@ -96,6 +96,17 @@ class BilaxyMarkets(models.Model):
         db_table = 'bilaxy_markets'
 
 
+class MexcMarkets(models.Model):
+    market = models.CharField(unique=True, max_length=30)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField()
+
+    class Meta:
+        managed = False
+        db_table = 'mexc_markets'
+
+
 class ComparePairs(models.Model):
     token = models.CharField(unique=True, max_length=20)
     contract = models.CharField(max_length=100)

@@ -29,6 +29,13 @@ class BilaxyMarketsAdmin(admin.ModelAdmin):
     actions = [activate, deactivate]
 
 
+@admin.register(MexcMarkets)
+class MexcMarketsAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
 @admin.register(ExchangePairs)
 class ExchangePairAdmin(admin.ModelAdmin):
     list_display = (
