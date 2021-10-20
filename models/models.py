@@ -16,7 +16,7 @@ class AscendexMarkets(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'gate_markets'
+        db_table = 'ascendex_markets'
 
 
 class GateMarkets(models.Model):
@@ -27,7 +27,7 @@ class GateMarkets(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'ascendex_markets'
+        db_table = 'gate_markets'
 
 
 class AuthGroup(models.Model):
