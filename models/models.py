@@ -19,17 +19,6 @@ class AscendexMarkets(models.Model):
         db_table = 'ascendex_markets'
 
 
-class GateMarkets(models.Model):
-    market = models.CharField(max_length=30, blank=True, null=True)
-    token = models.CharField(max_length=30, blank=True, null=True)
-    tsymbol = models.CharField(max_length=100, blank=True, null=True)
-    is_active = models.BooleanField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'gate_markets'
-
-
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=150)
 
@@ -105,6 +94,17 @@ class BilaxyMarkets(models.Model):
     class Meta:
         managed = False
         db_table = 'bilaxy_markets'
+
+
+class GateMarkets(models.Model):
+    market = models.CharField(max_length=30, blank=True, null=True)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'gate_markets'
 
 
 class MexcMarkets(models.Model):
