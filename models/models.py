@@ -389,8 +389,9 @@ class Settings(models.Model):
     gas_fast = models.IntegerField()
     gas_normal = models.IntegerField()
     currency_usd = models.FloatField(blank=True, null=True)
-    min_profit = models.FloatField(help_text='минимальный профит в USDT')
+    min_profit = models.FloatField(help_text='минимальный профит в USDC')
     min_volume_eth = models.FloatField(help_text='минимальный порог парсера в ETH')
+    hide_volume_usd = models.FloatField(help_text='сумма порога спрятанных профитов в USDC')
 
     class Meta:
         managed = False
