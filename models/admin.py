@@ -5,7 +5,6 @@ from django.urls import reverse
 from django.utils.html import format_html
 
 from .models import *
-# Register your models here.
 from .admin_utils import activate, deactivate
 
 
@@ -52,7 +51,7 @@ class ExchangePairAdmin(admin.ModelAdmin):
 
 @admin.register(Settings)
 class SettingsAdmin(admin.ModelAdmin):
-    list_display = ('timeout_refresh_data', 'timeout_notice', 'koef_top', 'koef_low', 'koef_push', 'min_profit')
+    list_display = ('timeout_refresh_data', 'timeout_notice', 'koef_top', 'koef_low', 'koef_push', 'hide_volume_usd')
 
 
 @admin.register(SettingsModules)
