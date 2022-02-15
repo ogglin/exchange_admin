@@ -152,3 +152,52 @@ class UniswapAdmin(admin.ModelAdmin):
 class UniswapOneAdmin(admin.ModelAdmin):
     list_display = ('exch_direction', 'tsymbol', 'is_active')
     search_fields = ('exch_direction', 'tsymbol',)
+
+
+@admin.register(MarketAscendexTest)
+class MarketAscendexTestAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
+@admin.register(MarketBilaxyTest)
+class MarketBilaxyTestAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
+@admin.register(MarketGateTest)
+class MarketGateTestAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
+@admin.register(MarketHitbtcTest)
+class MarketHitbtcTestAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
+@admin.register(MarketHotbitTest)
+class MarketHotbitTestAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
+@admin.register(MarketIdexTest)
+class MarketIdexTestAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
+@admin.register(MarketMexcTest)
+class MarketMexcTestAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]

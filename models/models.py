@@ -19,6 +19,17 @@ class AscendexMarkets(models.Model):
         db_table = 'ascendex_markets'
 
 
+class MarketAscendexTest(models.Model):
+    market = models.CharField(max_length=30, blank=True, null=True)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'market_ascendex_test'
+
+
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=150)
 
@@ -96,6 +107,17 @@ class BilaxyMarkets(models.Model):
         db_table = 'bilaxy_markets'
 
 
+class MarketBilaxyTest(models.Model):
+    market = models.CharField(unique=True, max_length=30)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField()
+
+    class Meta:
+        managed = False
+        db_table = 'market_bilaxy_test'
+
+
 class GateMarkets(models.Model):
     market = models.CharField(max_length=30, blank=True, null=True)
     token = models.CharField(max_length=30, blank=True, null=True)
@@ -107,6 +129,17 @@ class GateMarkets(models.Model):
         db_table = 'gate_markets'
 
 
+class MarketGateTest(models.Model):
+    market = models.CharField(max_length=30, blank=True, null=True)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'market_gate_test'
+
+
 class MexcMarkets(models.Model):
     market = models.CharField(unique=True, max_length=30)
     token = models.CharField(max_length=30, blank=True, null=True)
@@ -116,6 +149,17 @@ class MexcMarkets(models.Model):
     class Meta:
         managed = False
         db_table = 'mexc_markets'
+
+
+class MarketMexcTest(models.Model):
+    market = models.CharField(unique=True, max_length=30)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField()
+
+    class Meta:
+        managed = False
+        db_table = 'market_mexc_test'
 
 
 class ComparePairs(models.Model):
@@ -199,6 +243,17 @@ class HitbtcMarkets(models.Model):
         db_table = 'hitbtc_markets'
 
 
+class MarketHitbtcTest(models.Model):
+    market = models.CharField(unique=True, max_length=30)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField()
+
+    class Meta:
+        managed = False
+        db_table = 'market_hitbtc_test'
+
+
 class HotbitMarkets(models.Model):
     market = models.CharField(unique=True, max_length=30)
     token = models.CharField(max_length=30, blank=True, null=True)
@@ -208,6 +263,17 @@ class HotbitMarkets(models.Model):
     class Meta:
         managed = False
         db_table = 'hotbit_markets'
+
+
+class MarketHotbitTest(models.Model):
+    market = models.CharField(unique=True, max_length=30)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField()
+
+    class Meta:
+        managed = False
+        db_table = 'market_hotbit_test'
 
 
 class IdexMarkets(models.Model):
@@ -220,6 +286,16 @@ class IdexMarkets(models.Model):
         managed = False
         db_table = 'idex_markets'
 
+
+class MarketIdexTest(models.Model):
+    market = models.CharField(unique=True, max_length=30)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField()
+
+    class Meta:
+        managed = False
+        db_table = 'market_idex_test'
 
 class IdexSocketLog(models.Model):
     log = models.TextField(blank=True, null=True)
