@@ -468,6 +468,7 @@ class Settings(models.Model):
     min_profit = models.FloatField(help_text='минимальный профит в USDC')
     min_volume_eth = models.FloatField(help_text='минимальный порог парсера в ETH')
     hide_volume_usd = models.FloatField(help_text='сумма порога спрятанных профитов в USDC')
+    max_volume_usd = models.FloatField(help_text='максимальный объем в USDC')
 
     class Meta:
         managed = False
