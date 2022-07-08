@@ -308,6 +308,7 @@ class MarketIdexTest(models.Model):
         managed = False
         db_table = 'market_idex_test'
 
+
 class IdexSocketLog(models.Model):
     log = models.TextField(blank=True, null=True)
 
@@ -417,6 +418,22 @@ class ModuleUniswapOne(models.Model):
     class Meta:
         managed = False
         db_table = 'module_uniswap_one'
+
+
+class PoolsSushi(models.Model):
+    pool_contract = models.CharField(max_length=500)
+    token0_contract = models.CharField(max_length=500)
+    token0_symbol = models.CharField(max_length=500)
+    token0_decimals = models.CharField(max_length=500)
+    token1_contract = models.CharField(max_length=500)
+    token1_symbol = models.CharField(max_length=500)
+    token1_decimals = models.CharField(max_length=500)
+    is_active = models.BooleanField()
+    tsymbol = models.CharField(max_length=500)
+
+    class Meta:
+        managed = False
+        db_table = 'pools_sushi'
 
 
 class ProfitExchanges(models.Model):

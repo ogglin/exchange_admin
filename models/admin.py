@@ -56,6 +56,13 @@ class ExchangePairAdmin(admin.ModelAdmin):
     search_fields = ('exch_direction',)
 
 
+@admin.register(PoolsSushi)
+class PoolsSushiAdmin(admin.ModelAdmin):
+    list_display = (
+        'pool_contract', 'token0_contract', 'token0_symbol', 'token1_contract', 'token1_symbol', 'tsymbol', 'is_active')
+    search_fields = ('polls_sushi',)
+
+
 @admin.register(Settings)
 class SettingsAdmin(admin.ModelAdmin):
     list_display = ('timeout_refresh_data', 'timeout_notice', 'koef_top', 'koef_low', 'koef_push', 'hide_volume_usd',
