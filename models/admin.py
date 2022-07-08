@@ -28,6 +28,13 @@ class GateMarketsAdmin(admin.ModelAdmin):
     actions = [activate, deactivate]
 
 
+@admin.register(KucoinMarkets)
+class GateMarketsAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
 @admin.register(BilaxyMarkets)
 class BilaxyMarketsAdmin(admin.ModelAdmin):
     list_display = ('market', 'token', 'tsymbol', 'is_active')
