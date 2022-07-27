@@ -519,6 +519,7 @@ class TrustedPairs(models.Model):
     is_active = models.BooleanField()
     tsymbol = models.CharField(unique=True, max_length=100, blank=True, null=True)
     token_name = models.CharField(max_length=255, blank=True, null=True)
+    strong_active = models.BooleanField()
 
     class Meta:
         managed = False

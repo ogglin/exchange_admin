@@ -76,7 +76,7 @@ class SettingsModulesAdmin(admin.ModelAdmin):
 
 @admin.register(TrustedPairs)
 class TrustedPairsAdmin(admin.ModelAdmin):
-    list_display = ('token', 'contract', 'tsymbol', 'decimals', 'is_active', 'token_actions',)
+    list_display = ('token', 'contract', 'tsymbol', 'decimals', 'is_active', 'token_actions', 'strong_active')
     list_filter = ('is_active',)
     search_fields = ('token', 'tsymbol', 'contract',)
 
