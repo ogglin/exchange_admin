@@ -461,6 +461,15 @@ class UniswapMarkets(models.Model):
         db_table = 'uniswap_markets'
 
 
+class V3PoolsContracts(models.Model):
+    contract = models.CharField(unique=True, max_length=100, blank=False, null=False)
+    checked = models.BooleanField(blank=False, default=False)
+
+    class Meta:
+        managed = False
+        db_table = 'v3_pools_contracts'
+
+
 class WebsocketLog(models.Model):
     datetime = models.DateTimeField()
     log = models.TextField(unique=True)

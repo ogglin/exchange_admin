@@ -168,3 +168,8 @@ class UniswapOneAdmin(admin.ModelAdmin):
     list_display = ('exch_direction', 'tsymbol', 'is_active')
     search_fields = ('exch_direction', 'tsymbol',)
 
+
+@admin.register(V3PoolsContracts)
+class V3PollsContractsAdmin(admin.ModelAdmin):
+    list_display = ('contract', 'checked')
+    search_fields = ('contract',)
