@@ -5,6 +5,8 @@
 #   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
+import datetime
+
 from django.db import models
 
 
@@ -459,6 +461,24 @@ class UniswapMarkets(models.Model):
     class Meta:
         managed = False
         db_table = 'uniswap_markets'
+
+
+class PoolsUniV3(models.Model):
+    pool_contract = models.CharField(max_length=500, null=False, blank=False)
+    token0_contract = models.CharField(max_length=500, null=False, blank=False)
+    token0_symbol = models.CharField(max_length=500, null=False, blank=False)
+    token0_decimals = models.CharField(max_length=500)
+    token0_name = models.CharField(max_length=500)
+    token1_contract = models.CharField(max_length=500, null=False, blank=False)
+    token1_symbol = models.CharField(max_length=500, null=False, blank=False)
+    token1_decimals = models.CharField(max_length=500, null=False, blank=False)
+    token1_name = models.CharField(max_length=500)
+    is_active = models.BooleanField(default=False)
+    date = models.DateTimeField(default=datetime.datetime.now())
+
+    class Meta:
+        managed = False
+        db_table = 'pools_uni_v3'
 
 
 class V3PoolsContracts(models.Model):
