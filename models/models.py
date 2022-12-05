@@ -422,6 +422,8 @@ class Settings(models.Model):
     min_volume_eth = models.FloatField(help_text='минимальный порог парсера в ETH')
     hide_volume_usd = models.FloatField(help_text='сумма порога спрятанных профитов в USDC')
     max_volume_usd = models.FloatField(help_text='максимальный объем в USDC')
+    alert_profit_usd = models.IntegerField(help_text='мин профит для звука')
+    alert_time = models.IntegerField(help_text='время на которое запоминает в сек')
 
     class Meta:
         managed = False
