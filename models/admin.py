@@ -16,21 +16,21 @@ class BancorAdmin(admin.ModelAdmin):
 
 @admin.register(AscendexMarkets)
 class AscendexMarketsAdmin(admin.ModelAdmin):
-    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    list_display = ('market', 'token', 'tsymbol', 'is_active', 'currency', 'chain_name', 'withdraw_fee', 'allow_deposit', 'allow_withdraw', 'min_deposit_amt', 'min_withdrawal', 'num_confirmations')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
 
 
 @admin.register(GateMarkets)
 class GateMarketsAdmin(admin.ModelAdmin):
-    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    list_display = ('market', 'token', 'tsymbol', 'is_active', 'currency', 'delisted', 'withdraw_disabled', 'withdraw_delayed', 'deposit_disabled', 'trade_disabled', 'fixed_rate', 'chain')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
 
 
 @admin.register(KucoinMarkets)
 class GateMarketsAdmin(admin.ModelAdmin):
-    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    list_display = ('market', 'token', 'tsymbol', 'is_active', 'markets', 'is_margin_enabled', 'enable_trading')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
 
@@ -44,7 +44,7 @@ class BilaxyMarketsAdmin(admin.ModelAdmin):
 
 @admin.register(MexcMarkets)
 class MexcMarketsAdmin(admin.ModelAdmin):
-    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    list_display = ('market', 'token', 'tsymbol', 'is_active', 'currency', 'chain', 'fee', 'is_withdraw_enabled', 'is_deposit_enabled')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
 
@@ -132,7 +132,7 @@ class WebsocketLogAdmin(admin.ModelAdmin):
 
 @admin.register(HitbtcMarkets)
 class HitbtcMarketsAdmin(admin.ModelAdmin):
-    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    list_display = ('market', 'token', 'tsymbol', 'is_active', 'payin_enabled', 'payout_enabled', 'transfer_enabled')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
 
