@@ -1,5 +1,6 @@
 from django.contrib import admin
-from django.conf.urls import url
+# from django.conf.urls import url
+from django.urls import include, re_path
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.utils.html import format_html
@@ -83,7 +84,7 @@ class TrustedPairsAdmin(admin.ModelAdmin):
     def get_urls(self):
         urls = super().get_urls()
         custom_urls = [
-            url(r'^(?P<token_id>.+)/uniswap/$', self.process_uniswap, kwargs=[], name='token-uniswap'),
+            re_path(r'^(?P<token_id>.+)/uniswap/$', self.process_uniswap, name='token-uniswap'),
             # url(
             #     r'^(?P<token_id>.+)/withdraw/$',
             #     self.admin_site.admin_view(self.process_withdraw),
