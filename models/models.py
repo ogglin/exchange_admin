@@ -10,7 +10,7 @@ import datetime
 from django.db import models
 
 
-class AscendexMarkets(models.Model):
+class AscendexMarket(models.Model):
     market = models.CharField(max_length=30, blank=True, null=True)
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
@@ -95,7 +95,7 @@ class AuthUserUserPermissions(models.Model):
         unique_together = (('user', 'permission'),)
 
 
-class BilaxyMarkets(models.Model):
+class BilaxyMarket(models.Model):
     market = models.CharField(unique=True, max_length=30)
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
@@ -106,7 +106,7 @@ class BilaxyMarkets(models.Model):
         db_table = 'bilaxy_markets'
 
 
-class GateMarkets(models.Model):
+class GateMarket(models.Model):
     market = models.CharField(max_length=30, blank=True, null=True)
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
@@ -125,7 +125,7 @@ class GateMarkets(models.Model):
         db_table = 'gate_markets'
 
 
-class KucoinMarkets(models.Model):
+class KucoinMarket(models.Model):
     market = models.CharField(max_length=30, blank=True, null=True)
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
@@ -139,7 +139,7 @@ class KucoinMarkets(models.Model):
         db_table = 'kucoin_markets'
 
 
-class MexcMarkets(models.Model):
+class MexcMarket(models.Model):
     market = models.CharField(unique=True, max_length=30)
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
@@ -155,7 +155,7 @@ class MexcMarkets(models.Model):
         db_table = 'mexc_markets'
 
 
-class ComparePairs(models.Model):
+class ComparePair(models.Model):
     token = models.CharField(unique=True, max_length=20)
     contract = models.CharField(max_length=100)
     decimals = models.IntegerField(blank=True, null=True)
@@ -211,21 +211,7 @@ class DjangoSession(models.Model):
         db_table = 'django_session'
 
 
-class ExchangePairs(models.Model):
-    exch_direction = models.CharField(max_length=20)
-    bancor_direction = models.ForeignKey('ModuleBancor', models.DO_NOTHING, blank=True, null=True)
-    idex_direction = models.ForeignKey('ModuleIdex', models.DO_NOTHING, blank=True, null=True)
-    kyber_direction = models.ForeignKey('ModuleKyber', models.DO_NOTHING, blank=True, null=True)
-    uniswap_direction = models.ForeignKey('ModuleUniswap', models.DO_NOTHING, blank=True, null=True)
-    uniswap_one_direction = models.ForeignKey('ModuleUniswapOne', models.DO_NOTHING, blank=True, null=True)
-    hotbit = models.ForeignKey('ModuleHotbit', models.DO_NOTHING, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'exchange_pairs'
-
-
-class HitbtcMarkets(models.Model):
+class HitbtcMarket(models.Model):
     market = models.CharField(unique=True, max_length=30)
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
@@ -239,7 +225,7 @@ class HitbtcMarkets(models.Model):
         db_table = 'hitbtc_markets'
 
 
-class HotbitMarkets(models.Model):
+class HotbitMarket(models.Model):
     market = models.CharField(unique=True, max_length=30)
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
@@ -250,7 +236,7 @@ class HotbitMarkets(models.Model):
         db_table = 'hotbit_markets'
 
 
-class IdexMarkets(models.Model):
+class IdexMarket(models.Model):
     market = models.CharField(unique=True, max_length=30)
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
@@ -260,116 +246,6 @@ class IdexMarkets(models.Model):
         managed = False
         db_table = 'idex_markets'
 
-
-class IdexSocketLog(models.Model):
-    log = models.TextField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'idex_socket_log'
-
-
-class ModuleBancor(models.Model):
-    exch_direction = models.CharField(max_length=20)
-    highest_bid = models.FloatField()
-    lowest_ask = models.FloatField()
-    name = models.CharField(max_length=100)
-    link_id = models.CharField(max_length=100)
-    is_active = models.BooleanField()
-    volume = models.FloatField()
-    tsymbol = models.CharField(unique=True, max_length=100, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'module_bancor'
-
-
-class ModuleHitbtc(models.Model):
-    exch_direction = models.CharField(max_length=30)
-    buy = models.FloatField(blank=True, null=True)
-    sell = models.FloatField(blank=True, null=True)
-    symbol = models.CharField(unique=True, max_length=30)
-    tsymbol = models.CharField(max_length=100, blank=True, null=True)
-    volume = models.FloatField(blank=True, null=True)
-    contract = models.CharField(max_length=100, blank=True, null=True)
-    decimals = models.IntegerField(blank=True, null=True)
-    is_active = models.BooleanField()
-
-    class Meta:
-        managed = False
-        db_table = 'module_hitbtc'
-
-
-class ModuleHotbit(models.Model):
-    exch_direction = models.CharField(max_length=30)
-    buy = models.FloatField(blank=True, null=True)
-    sell = models.FloatField(blank=True, null=True)
-    symbol = models.CharField(unique=True, max_length=30)
-    is_active = models.BooleanField()
-    volume = models.FloatField(blank=True, null=True)
-    contract = models.CharField(max_length=100, blank=True, null=True)
-    decimals = models.IntegerField(blank=True, null=True)
-    tsymbol = models.CharField(max_length=100, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'module_hotbit'
-
-
-class ModuleIdex(models.Model):
-    exch_direction = models.CharField(max_length=20)
-    lowest_ask = models.FloatField()
-    highest_bid = models.FloatField()
-    is_active = models.BooleanField()
-    token_id = models.CharField(max_length=50, blank=True, null=True)
-    volume = models.FloatField()
-    tsymbol = models.CharField(unique=True, max_length=100, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'module_idex'
-
-
-class ModuleKyber(models.Model):
-    exch_direction = models.CharField(max_length=20)
-    highest_bid = models.FloatField()
-    lowest_ask = models.FloatField()
-    is_active = models.BooleanField()
-    volume = models.FloatField()
-    token_id = models.CharField(max_length=50, blank=True, null=True)
-    tsymbol = models.CharField(unique=True, max_length=100, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'module_kyber'
-
-
-class ModuleUniswap(models.Model):
-    exch_direction = models.CharField(max_length=256)
-    highest_bid = models.FloatField(blank=True, null=True)
-    lowest_ask = models.FloatField(blank=True, null=True)
-    is_active = models.BooleanField()
-    tokenid = models.CharField(max_length=500)
-    volume = models.FloatField(blank=True, null=True)
-    tsymbol = models.CharField(unique=True, max_length=100, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'module_uniswap'
-
-
-class ModuleUniswapOne(models.Model):
-    exch_direction = models.CharField(max_length=256)
-    highest_bid = models.FloatField()
-    lowest_ask = models.FloatField()
-    is_active = models.BooleanField()
-    tokenid = models.CharField(max_length=500)
-    volume = models.FloatField()
-    tsymbol = models.CharField(unique=True, max_length=100, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'module_uniswap_one'
 
 
 class PoolsSushi(models.Model):
@@ -388,7 +264,7 @@ class PoolsSushi(models.Model):
         db_table = 'pools_sushi'
 
 
-class ProfitExchanges(models.Model):
+class ProfitExchange(models.Model):
     pair = models.CharField(max_length=100)
     buy_name = models.CharField(max_length=100)
     buy = models.FloatField()
@@ -431,7 +307,7 @@ class SendMailContacts(models.Model):
         db_table = 'send_mail_contacts'
 
 
-class Settings(models.Model):
+class Setting(models.Model):
     timeout_refresh_data = models.IntegerField()
     timeout_notice = models.IntegerField()
     koef_top = models.FloatField()
@@ -457,7 +333,7 @@ class Settings(models.Model):
         db_table = 'settings'
 
 
-class SettingsModules(models.Model):
+class SettingsModule(models.Model):
     module_name = models.CharField(max_length=200)
     is_active = models.BooleanField()
 
@@ -466,7 +342,7 @@ class SettingsModules(models.Model):
         db_table = 'settings_modules'
 
 
-class TrustedPairs(models.Model):
+class TrustedPair(models.Model):
     token = models.CharField(max_length=20)
     contract = models.CharField(unique=True, max_length=100, blank=True, null=True)
     decimals = models.IntegerField(blank=True, null=True)
@@ -478,18 +354,6 @@ class TrustedPairs(models.Model):
     class Meta:
         managed = False
         db_table = 'trusted_pairs'
-
-
-class UniswapMarkets(models.Model):
-    market = models.CharField(unique=True, max_length=100)
-    token = models.CharField(max_length=256, blank=True, null=True)
-    tokenid = models.CharField(max_length=256, blank=True, null=True)
-    tsymbol = models.CharField(max_length=100, blank=True, null=True)
-    is_active = models.BooleanField()
-
-    class Meta:
-        managed = False
-        db_table = 'uniswap_markets'
 
 
 class PoolsUniV3(models.Model):
@@ -510,27 +374,10 @@ class PoolsUniV3(models.Model):
         db_table = 'pools_uni_v3'
 
 
-class V3PoolsContracts(models.Model):
+class V3PoolsContract(models.Model):
     contract = models.CharField(unique=True, max_length=100, blank=False, null=False)
     checked = models.BooleanField(blank=False, default=False)
 
     class Meta:
         managed = False
         db_table = 'v3_pools_contracts'
-
-
-class WebsocketLog(models.Model):
-    datetime = models.DateTimeField()
-    log = models.TextField(unique=True)
-    buy_url = models.CharField(max_length=255, blank=True, null=True)
-    sell_url = models.CharField(max_length=255, blank=True, null=True)
-    percent = models.CharField(max_length=255, blank=True, null=True)
-    site = models.CharField(max_length=255, blank=True, null=True)
-    token = models.CharField(max_length=255, blank=True, null=True)
-    type = models.CharField(max_length=255, blank=True, null=True)
-    price = models.CharField(max_length=255, blank=True, null=True)
-    sprice = models.CharField(max_length=255, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'websocket_log'
