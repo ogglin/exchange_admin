@@ -230,6 +230,7 @@ class HotbitMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField()
+    chain = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         managed = False

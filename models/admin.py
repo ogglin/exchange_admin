@@ -123,7 +123,7 @@ class HitbtcMarketsAdmin(admin.ModelAdmin):
 
 @admin.register(HotbitMarket)
 class HotbitMarketsAdmin(admin.ModelAdmin):
-    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    list_display = ('market', 'token', 'tsymbol', 'is_active', 'chain')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
 
