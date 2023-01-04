@@ -361,13 +361,11 @@ class PoolsUniV2(models.Model):
     token0_contract = models.CharField(max_length=500, null=False, blank=False)
     token0_symbol = models.CharField(max_length=500, null=False, blank=False)
     token0_decimals = models.CharField(max_length=500)
-    token0_name = models.CharField(max_length=500)
     token1_contract = models.CharField(max_length=500, null=False, blank=False)
     token1_symbol = models.CharField(max_length=500, null=False, blank=False)
     token1_decimals = models.CharField(max_length=500, null=False, blank=False)
-    token1_name = models.CharField(max_length=500)
     is_active = models.BooleanField(default=False)
-    date = models.DateTimeField(default=datetime.datetime.now())
+    datatime = models.DateTimeField(default=datetime.datetime.now())
 
     class Meta:
         managed = False

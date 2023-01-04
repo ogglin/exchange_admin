@@ -137,8 +137,8 @@ class PoolsSushiAdmin(admin.ModelAdmin):
 
 @admin.register(PoolsUniV2)
 class V3PollsContractsAdmin(admin.ModelAdmin):
-    list_display = ('pool_contract', 'token0_contract', 'token0_symbol', 'token0_decimals', 'token0_name',
-                    'token1_contract', 'token1_symbol', 'token1_decimals', 'token1_name', 'is_active',)
+    list_display = ('pool_contract', 'token0_contract', 'token0_symbol', 'token0_decimals',
+                    'token1_contract', 'token1_symbol', 'token1_decimals', 'is_active',)
     search_fields = ('pool_contract', 'token0_contract', 'token0_symbol', 'token1_contract', 'token1_symbol',)
 
 
