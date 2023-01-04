@@ -248,7 +248,6 @@ class IdexMarket(models.Model):
         db_table = 'idex_markets'
 
 
-
 class PoolsSushi(models.Model):
     pool_contract = models.CharField(max_length=500)
     token0_contract = models.CharField(max_length=500)
@@ -355,6 +354,24 @@ class TrustedPair(models.Model):
     class Meta:
         managed = False
         db_table = 'trusted_pairs'
+
+
+class PoolsUniV2(models.Model):
+    pool_contract = models.CharField(max_length=500, null=False, blank=False)
+    token0_contract = models.CharField(max_length=500, null=False, blank=False)
+    token0_symbol = models.CharField(max_length=500, null=False, blank=False)
+    token0_decimals = models.CharField(max_length=500)
+    token0_name = models.CharField(max_length=500)
+    token1_contract = models.CharField(max_length=500, null=False, blank=False)
+    token1_symbol = models.CharField(max_length=500, null=False, blank=False)
+    token1_decimals = models.CharField(max_length=500, null=False, blank=False)
+    token1_name = models.CharField(max_length=500)
+    is_active = models.BooleanField(default=False)
+    date = models.DateTimeField(default=datetime.datetime.now())
+
+    class Meta:
+        managed = False
+        db_table = 'pools_uni_v2'
 
 
 class PoolsUniV3(models.Model):

@@ -50,13 +50,6 @@ class MexcMarketsAdmin(admin.ModelAdmin):
     actions = [activate, deactivate]
 
 
-@admin.register(PoolsSushi)
-class PoolsSushiAdmin(admin.ModelAdmin):
-    list_display = (
-        'pool_contract', 'token0_contract', 'token0_symbol', 'token1_contract', 'token1_symbol', 'tsymbol', 'is_active')
-    search_fields = ('polls_sushi',)
-
-
 @admin.register(Setting)
 class SettingsAdmin(admin.ModelAdmin):
     list_display = ('timeout_refresh_data', 'timeout_notice', 'koef_top', 'koef_low', 'koef_push', 'hide_volume_usd',
@@ -135,11 +128,25 @@ class IdexMarketsAdmin(admin.ModelAdmin):
     actions = [activate, deactivate]
 
 
+@admin.register(PoolsSushi)
+class PoolsSushiAdmin(admin.ModelAdmin):
+    list_display = ('pool_contract', 'token0_contract', 'token0_symbol', 'token0_decimals',
+                    'token1_contract', 'token1_symbol', 'token1_decimals', 'is_active',)
+    search_fields = ('pool_contract', 'token0_contract', 'token0_symbol', 'token1_contract', 'token1_symbol',)
+
+
+@admin.register(PoolsUniV2)
+class V3PollsContractsAdmin(admin.ModelAdmin):
+    list_display = ('pool_contract', 'token0_contract', 'token0_symbol', 'token0_decimals', 'token0_name',
+                    'token1_contract', 'token1_symbol', 'token1_decimals', 'token1_name', 'is_active',)
+    search_fields = ('pool_contract', 'token0_contract', 'token0_symbol', 'token1_contract', 'token1_symbol',)
+
+
 @admin.register(PoolsUniV3)
 class V3PollsContractsAdmin(admin.ModelAdmin):
     list_display = ('pool_contract', 'token0_contract', 'token0_symbol', 'token0_decimals', 'token0_name',
                     'token1_contract', 'token1_symbol', 'token1_decimals', 'token1_name', 'is_active',)
-    search_fields = ('pool_contract', 'token0_contract', 'token1_contract',)
+    search_fields = ('pool_contract', 'token0_contract', 'token0_symbol', 'token1_contract', 'token1_symbol',)
 
 
 @admin.register(V3PoolsContract)
