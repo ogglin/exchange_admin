@@ -106,6 +106,22 @@ class BilaxyMarket(models.Model):
         db_table = 'bilaxy_markets'
 
 
+class BitrueMarket(models.Model):
+    market = models.CharField(max_length=30, blank=True, null=True)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField(blank=True, null=True)
+    chains = models.CharField(max_length=256, blank=True, null=True)
+    status = models.CharField(max_length=30, blank=True, null=True)
+    coin_ful_name = models.CharField(max_length=100, blank=True, null=True)
+    enable_withdraw = models.BooleanField(blank=False, null=False, default=False)
+    enable_deposit = models.BooleanField(blank=False, null=False, default=False)
+
+    class Meta:
+        managed = False
+        db_table = 'bitrue_markets'
+
+
 class GateMarket(models.Model):
     market = models.CharField(max_length=30, blank=True, null=True)
     token = models.CharField(max_length=30, blank=True, null=True)

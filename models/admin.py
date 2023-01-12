@@ -18,6 +18,15 @@ class AscendexMarketsAdmin(admin.ModelAdmin):
     actions = [activate, deactivate]
 
 
+@admin.register(BitrueMarket)
+class GateMarketsAdmin(admin.ModelAdmin):
+    list_display = (
+        'market', 'token', 'tsymbol', 'is_active', 'chains', 'status', 'coin_ful_name', 'enable_withdraw',
+        'enable_deposit')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
 @admin.register(GateMarket)
 class GateMarketsAdmin(admin.ModelAdmin):
     list_display = (
