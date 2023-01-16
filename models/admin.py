@@ -27,6 +27,14 @@ class GateMarketsAdmin(admin.ModelAdmin):
     actions = [activate, deactivate]
 
 
+@admin.register(BkexMarket)
+class GateMarketsAdmin(admin.ModelAdmin):
+    list_display = (
+        'market', 'token', 'tsymbol', 'is_active', 'support_trade', 'trade_set', 'support_deposit', 'support_withdraw')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
 @admin.register(GateMarket)
 class GateMarketsAdmin(admin.ModelAdmin):
     list_display = (
