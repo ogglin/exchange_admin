@@ -15,14 +15,6 @@ class AscendexMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField(blank=True, null=True)
-    currency = models.CharField(max_length=30, blank=True, null=True)
-    chain_name = models.CharField(max_length=30, blank=True, null=True)
-    withdraw_fee = models.FloatField()
-    allow_deposit = models.BooleanField(blank=True, null=True)
-    allow_withdraw = models.BooleanField(blank=True, null=True)
-    min_deposit_amt = models.FloatField()
-    min_withdrawal = models.FloatField()
-    num_confirmations = models.IntegerField()
 
     class Meta:
         managed = False
@@ -111,11 +103,7 @@ class BitrueMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField(blank=True, null=True)
-    chains = models.CharField(max_length=256, blank=True, null=True)
-    status = models.CharField(max_length=30, blank=True, null=True)
-    coin_ful_name = models.CharField(max_length=100, blank=True, null=True)
-    enable_withdraw = models.BooleanField(blank=False, null=False, default=False)
-    enable_deposit = models.BooleanField(blank=False, null=False, default=False)
+
 
     class Meta:
         managed = False
@@ -127,10 +115,6 @@ class BkexMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField(blank=True, null=True)
-    support_trade = models.BooleanField(blank=False, null=False, default=False)
-    trade_set = models.CharField(max_length=30, blank=True, null=True)
-    support_deposit = models.BooleanField(blank=False, null=False, default=False)
-    support_withdraw = models.BooleanField(blank=False, null=False, default=False)
 
     class Meta:
         managed = False
@@ -142,14 +126,6 @@ class GateMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField(blank=True, null=True)
-    currency = models.CharField(max_length=30, blank=True, null=True)
-    delisted = models.BooleanField(blank=True, null=True)
-    withdraw_disabled = models.BooleanField(blank=False, null=False, default=False)
-    withdraw_delayed = models.BooleanField(blank=False, null=False, default=False)
-    deposit_disabled = models.BooleanField(blank=False, null=False, default=False)
-    trade_disabled = models.BooleanField(blank=False, null=False, default=False)
-    fixed_rate = models.IntegerField()
-    chain = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -161,9 +137,6 @@ class KucoinMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField(blank=True, null=True)
-    markets = models.CharField(max_length=100, blank=True, null=True)
-    is_margin_enabled = models.BooleanField(blank=False, null=False, default=False)
-    enable_trading = models.BooleanField(blank=False, null=False, default=False)
 
     class Meta:
         managed = False
@@ -175,11 +148,6 @@ class MexcMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField()
-    currency = models.CharField(max_length=100, blank=True, null=True)
-    chain = models.CharField(max_length=100, blank=True, null=True)
-    fee = models.IntegerField()
-    is_withdraw_enabled = models.BooleanField(blank=False, null=False, default=False)
-    is_deposit_enabled = models.BooleanField(blank=False, null=False, default=False)
 
     class Meta:
         managed = False
@@ -247,9 +215,6 @@ class HitbtcMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField()
-    payin_enabled = models.BooleanField(default=False)
-    payout_enabled = models.BooleanField(default=False)
-    transfer_enabled = models.BooleanField(default=False)
 
     class Meta:
         managed = False
@@ -261,7 +226,6 @@ class HotbitMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField()
-    chain = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         managed = False

@@ -11,42 +11,35 @@ from .admin_utils import activate, deactivate
 
 @admin.register(AscendexMarket)
 class AscendexMarketsAdmin(admin.ModelAdmin):
-    list_display = (
-        'market', 'token', 'tsymbol', 'is_active', 'currency', 'chain_name', 'withdraw_fee', 'allow_deposit',
-        'allow_withdraw', 'min_deposit_amt', 'min_withdrawal', 'num_confirmations')
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
 
 
 @admin.register(BitrueMarket)
 class GateMarketsAdmin(admin.ModelAdmin):
-    list_display = (
-        'market', 'token', 'tsymbol', 'is_active', 'chains', 'status', 'coin_ful_name', 'enable_withdraw',
-        'enable_deposit')
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
 
 
 @admin.register(BkexMarket)
 class GateMarketsAdmin(admin.ModelAdmin):
-    list_display = (
-        'market', 'token', 'tsymbol', 'is_active', 'support_trade', 'trade_set', 'support_deposit', 'support_withdraw')
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
 
 
 @admin.register(GateMarket)
 class GateMarketsAdmin(admin.ModelAdmin):
-    list_display = (
-        'market', 'token', 'tsymbol', 'is_active', 'currency', 'delisted', 'withdraw_disabled', 'withdraw_delayed',
-        'deposit_disabled', 'trade_disabled', 'fixed_rate', 'chain')
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
 
 
 @admin.register(KucoinMarket)
-class GateMarketsAdmin(admin.ModelAdmin):
-    list_display = ('market', 'token', 'tsymbol', 'is_active', 'markets', 'is_margin_enabled', 'enable_trading')
+class KucoinMarketsAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
 
@@ -60,9 +53,7 @@ class BilaxyMarketsAdmin(admin.ModelAdmin):
 
 @admin.register(MexcMarket)
 class MexcMarketsAdmin(admin.ModelAdmin):
-    list_display = (
-        'market', 'token', 'tsymbol', 'is_active', 'currency', 'chain', 'fee', 'is_withdraw_enabled',
-        'is_deposit_enabled')
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
 
@@ -126,14 +117,14 @@ class TrustedPairsAdmin(admin.ModelAdmin):
 
 @admin.register(HitbtcMarket)
 class HitbtcMarketsAdmin(admin.ModelAdmin):
-    list_display = ('market', 'token', 'tsymbol', 'is_active', 'payin_enabled', 'payout_enabled', 'transfer_enabled')
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
 
 
 @admin.register(HotbitMarket)
 class HotbitMarketsAdmin(admin.ModelAdmin):
-    list_display = ('market', 'token', 'tsymbol', 'is_active', 'chain')
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
 
