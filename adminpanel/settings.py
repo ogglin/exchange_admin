@@ -82,9 +82,7 @@ DATABASES = {
         'NAME': 'exchange_comparison',
         'USER': 'exchange_comparison',
         'PASSWORD': '0L7OBgdmXgvV28',
-        # 'HOST': '65.21.191.118',
-        'HOST': '91.215.61.140',
-        # 'PORT': 5432
+        'HOST': '91.215.61.108',
         'PORT': 25432
     }
 }
