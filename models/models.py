@@ -104,7 +104,6 @@ class BitrueMarket(models.Model):
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField(blank=True, null=True)
 
-
     class Meta:
         managed = False
         db_table = 'bitrue_markets'
@@ -351,6 +350,18 @@ class TrustedPair(models.Model):
         db_table = 'trusted_pairs'
 
 
+class TrustedTokensBSC(models.Model):
+    token = models.CharField(max_length=20)
+    contract = models.CharField(unique=True, max_length=100, blank=True, null=True)
+    tsymbol = models.CharField(unique=True, max_length=100, blank=True, null=True)
+    is_active = models.BooleanField(blank=False, default=False)
+    strong_active = models.BooleanField(blank=False, default=False)
+
+    class Meta:
+        managed = False
+        db_table = 'trusted_tokens_bsc'
+
+
 class PoolsUniV2(models.Model):
     pool_contract = models.CharField(max_length=500, null=False, blank=False)
     token0_contract = models.CharField(max_length=500, null=False, blank=False)
@@ -387,7 +398,7 @@ class PoolsUniV3(models.Model):
 
 class V3PoolsContract(models.Model):
     contract = models.CharField(unique=True, max_length=100, blank=False, null=False)
-    checked = models.BooleanField(blank=False, default=False)
+    checked = models.BooleanField(blank=True, default=False)
 
     class Meta:
         managed = False

@@ -69,6 +69,13 @@ class SettingsModulesAdmin(admin.ModelAdmin):
     list_display = ('module_name', 'is_active')
 
 
+@admin.register(TrustedTokensBSC)
+class TrustedTokensBSCAdmin(admin.ModelAdmin):
+    list_display = ('token', 'contract', 'tsymbol', 'is_active', 'strong_active')
+    list_filter = ('is_active',)
+    search_fields = ('token', 'tsymbol', 'contract',)
+
+
 @admin.register(TrustedPair)
 class TrustedPairsAdmin(admin.ModelAdmin):
     list_display = ('token', 'contract', 'tsymbol', 'decimals', 'is_active', 'strong_active')
