@@ -168,3 +168,38 @@ class V3PollsContractsAdmin(admin.ModelAdmin):
 class V3PollsContractsAdmin(admin.ModelAdmin):
     list_display = ('contract', 'checked')
     search_fields = ('contract',)
+
+
+@admin.register(TickersAscendex)
+class TickersAscendexAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
+@admin.register(TickersBitrue)
+class TickersBitrueAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
+@admin.register(TickersGate)
+class TickersGateAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
+@admin.register(TickersHitbtc)
+class TickersHitbtcAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
+@admin.register(TickersMexc)
+class TickersMexcAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]

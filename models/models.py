@@ -403,3 +403,58 @@ class V3PoolsContract(models.Model):
     class Meta:
         managed = False
         db_table = 'v3_pools_contracts'
+
+
+class TickersAscendex(models.Model):
+    market = models.CharField(max_length=30, blank=True, null=True)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'tickers_ascendex'
+
+
+class TickersBitrue(models.Model):
+    market = models.CharField(max_length=30, blank=True, null=True)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'tickers_bitrue'
+
+
+class TickersGate(models.Model):
+    market = models.CharField(max_length=30, blank=True, null=True)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'tickers_gate'
+
+
+class TickersHitbtc(models.Model):
+    market = models.CharField(max_length=30, blank=True, null=True)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'tickers_hitbtc'
+
+
+class TickersMexc(models.Model):
+    market = models.CharField(max_length=30, blank=True, null=True)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'tickers_mexc'
