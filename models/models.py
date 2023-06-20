@@ -5,8 +5,8 @@
 #   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
-import datetime
 
+from django.utils import timezone
 from django.db import models
 
 
@@ -302,25 +302,17 @@ class SendMailContacts(models.Model):
 
 
 class Setting(models.Model):
-    timeout_refresh_data = models.IntegerField()
-    timeout_notice = models.IntegerField()
-    koef_top = models.FloatField()
-    koef_low = models.FloatField()
-    koef_push = models.FloatField()
-    freeze_percent = models.FloatField()
-    api_keys = models.JSONField(blank=True, null=True)
-    market_koef = models.FloatField(blank=True, null=True)
-    market_percent = models.FloatField(blank=True, null=True)
     currency = models.FloatField(blank=True, null=True)
     gas_fast = models.IntegerField()
     gas_normal = models.IntegerField()
     currency_usd = models.FloatField(blank=True, null=True)
     min_profit = models.FloatField(help_text='минимальный профит в USDC')
-    min_volume_eth = models.FloatField(help_text='минимальный порог парсера в ETH')
     hide_volume_usd = models.FloatField(help_text='сумма порога спрятанных профитов в USDC')
     max_volume_usd = models.FloatField(help_text='максимальный объем в USDC')
     alert_profit_usd = models.IntegerField(help_text='мин профит для звука')
     alert_time = models.IntegerField(help_text='время на которое запоминает в сек')
+    candle_percent = models.FloatField(help_text='процент свечи')
+    candle_timer = models.FloatField(help_text='время заморозки показа свечи в секундах')
 
     class Meta:
         managed = False
@@ -371,7 +363,7 @@ class PoolsUniV2(models.Model):
     token1_symbol = models.CharField(max_length=500, null=False, blank=False)
     token1_decimals = models.CharField(max_length=500, null=False, blank=False)
     is_active = models.BooleanField(default=False)
-    datatime = models.DateTimeField(default=datetime.datetime.now())
+    datatime = models.DateTimeField(default=timezone.now())
 
     class Meta:
         managed = False
@@ -389,7 +381,7 @@ class PoolsUniV3(models.Model):
     token1_decimals = models.CharField(max_length=500, null=False, blank=False)
     token1_name = models.CharField(max_length=500)
     is_active = models.BooleanField(default=False)
-    date = models.DateTimeField(default=datetime.datetime.now())
+    date = models.DateTimeField(default=timezone.now())
 
     class Meta:
         managed = False
