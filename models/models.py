@@ -311,7 +311,9 @@ class Setting(models.Model):
     max_volume_usd = models.FloatField(help_text='максимальный объем в USDC')
     alert_profit_usd = models.IntegerField(help_text='мин профит для звука')
     alert_time = models.IntegerField(help_text='время на которое запоминает в сек')
-    candle_percent = models.FloatField(help_text='процент свечи')
+    alert_usdt = models.FloatField(help_text='объем в USDT для сравнения')
+    amm_percent = models.FloatField(help_text='процент биржи')
+    uni_percent = models.FloatField(help_text='процент uniswap')
     candle_timer = models.FloatField(help_text='время заморозки показа свечи в секундах')
 
     class Meta:
