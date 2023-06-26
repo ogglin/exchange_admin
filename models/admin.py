@@ -60,7 +60,7 @@ class MexcMarketsAdmin(admin.ModelAdmin):
 
 @admin.register(Setting)
 class SettingsAdmin(admin.ModelAdmin):
-    list_display = ('candle_percent', 'candle_timer', 'hide_volume_usd', 'max_volume_usd', 'alert_profit_usd', 'alert_time')
+    list_display = ('alert_usdt', 'amm_percent', 'uni_percent', 'candle_timer', 'hide_volume_usd', 'max_volume_usd', 'alert_profit_usd', 'alert_time')
 
 
 @admin.register(SettingsModule)
