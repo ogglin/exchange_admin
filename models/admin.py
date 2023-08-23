@@ -23,6 +23,13 @@ class GateMarketsAdmin(admin.ModelAdmin):
     actions = [activate, deactivate]
 
 
+@admin.register(BitgetMarket)
+class GateMarketsAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
 @admin.register(BkexMarket)
 class GateMarketsAdmin(admin.ModelAdmin):
     list_display = ('market', 'token', 'tsymbol', 'is_active')
@@ -60,7 +67,10 @@ class MexcMarketsAdmin(admin.ModelAdmin):
 
 @admin.register(Setting)
 class SettingsAdmin(admin.ModelAdmin):
-    list_display = ('alert_usdt', 'amm_percent', 'uni_percent', 'candle_timer', 'hide_volume_usd', 'max_volume_usd', 'alert_profit_usd', 'alert_time')
+    list_display = (
+        'alert_usdt', 'amm_percent', 'uni_percent', 'candle_timer', 'hide_volume_usd', 'max_volume_usd',
+        'alert_profit_usd',
+        'alert_time')
 
 
 @admin.register(SettingsModule)

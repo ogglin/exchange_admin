@@ -109,6 +109,17 @@ class BitrueMarket(models.Model):
         db_table = 'bitrue_markets'
 
 
+class BitgetMarket(models.Model):
+    market = models.CharField(max_length=30, blank=True, null=True)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'bitget_markets'
+
+
 class BkexMarket(models.Model):
     market = models.CharField(max_length=30, blank=True, null=True)
     token = models.CharField(max_length=30, blank=True, null=True)
