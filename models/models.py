@@ -5,6 +5,7 @@
 #   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
+import datetime
 
 from django.utils import timezone
 from django.db import models
@@ -376,7 +377,7 @@ class PoolsUniV2(models.Model):
     token1_symbol = models.CharField(max_length=500, null=False, blank=False)
     token1_decimals = models.CharField(max_length=500, null=False, blank=False)
     is_active = models.BooleanField(default=False)
-    datatime = models.DateTimeField(default=timezone.now())
+    datatime = models.DateTimeField(auto_now_add=True, blank=True)
 
     class Meta:
         managed = False
@@ -394,7 +395,7 @@ class PoolsUniV3(models.Model):
     token1_decimals = models.CharField(max_length=500, null=False, blank=False)
     token1_name = models.CharField(max_length=500)
     is_active = models.BooleanField(default=False)
-    date = models.DateTimeField(default=timezone.now())
+    date = models.DateTimeField(auto_now_add=True, blank=True)
 
     class Meta:
         managed = False
