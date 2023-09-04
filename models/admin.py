@@ -31,7 +31,7 @@ class GateMarketsAdmin(admin.ModelAdmin):
 
 
 @admin.register(BkexMarket)
-class GateMarketsAdmin(admin.ModelAdmin):
+class BkexMarketsAdmin(admin.ModelAdmin):
     list_display = ('market', 'token', 'tsymbol', 'is_active')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
@@ -181,6 +181,13 @@ class V3PollsContractsAdmin(admin.ModelAdmin):
 
 @admin.register(TickersAscendex)
 class TickersAscendexAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
+@admin.register(TickersBitget)
+class TickersBitgetAdmin(admin.ModelAdmin):
     list_display = ('market', 'token', 'tsymbol', 'is_active')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
