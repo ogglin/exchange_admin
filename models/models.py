@@ -478,8 +478,8 @@ class TickersMexc(models.Model):
 
 
 class TransferCheck(models.Model):
-    contract = models.CharField(max_length=30, blank=False, null=False)
-    label = models.CharField(max_length=30, blank=False, null=False)
+    contract = models.CharField(max_length=100, blank=False, null=False)
+    label = models.CharField(max_length=100, blank=False, null=False)
     exchanger = models.BooleanField(blank=False, null=False, default=False)
 
     class Meta:
