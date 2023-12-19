@@ -219,3 +219,9 @@ class TickersMexcAdmin(admin.ModelAdmin):
     list_display = ('market', 'token', 'tsymbol', 'is_active')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
+
+
+@admin.register(TransferCheck)
+class TransferCheckAdmin(admin.ModelAdmin):
+    list_display = ('contract', 'label', 'exchanger')
+    search_fields = ('contract', 'label',)

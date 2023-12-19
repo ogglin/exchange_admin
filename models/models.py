@@ -475,3 +475,13 @@ class TickersMexc(models.Model):
     class Meta:
         managed = False
         db_table = 'tickers_mexc'
+
+
+class TransferCheck(models.Model):
+    contract = models.CharField(max_length=30, blank=False, null=False)
+    label = models.CharField(max_length=30, blank=False, null=False)
+    exchanger = models.BooleanField(blank=False, null=False, default=False)
+
+    class Meta:
+        managed = False
+        db_table = 'transfer_check'
