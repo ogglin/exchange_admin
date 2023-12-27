@@ -16,6 +16,7 @@ class AscendexMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField(blank=True, null=True)
+    unique_token = models.BooleanField(blank=False, null=False, default=False)
 
     class Meta:
         managed = False
@@ -93,6 +94,7 @@ class BilaxyMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField()
+    unique_token = models.BooleanField(blank=False, null=False, default=False)
 
     class Meta:
         managed = False
@@ -104,6 +106,7 @@ class BitrueMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField(blank=True, null=True)
+    unique_token = models.BooleanField(blank=False, null=False, default=False)
 
     class Meta:
         managed = False
@@ -115,6 +118,7 @@ class BitgetMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField(blank=True, null=True)
+    unique_token = models.BooleanField(blank=False, null=False, default=False)
 
     class Meta:
         managed = False
@@ -126,6 +130,7 @@ class BkexMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField(blank=True, null=True)
+    unique_token = models.BooleanField(blank=False, null=False, default=False)
 
     class Meta:
         managed = False
@@ -137,6 +142,7 @@ class GateMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField(blank=True, null=True)
+    unique_token = models.BooleanField(blank=False, null=False, default=False)
 
     class Meta:
         managed = False
@@ -148,6 +154,7 @@ class KucoinMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField(blank=True, null=True)
+    unique_token = models.BooleanField(blank=False, null=False, default=False)
 
     class Meta:
         managed = False
@@ -159,6 +166,7 @@ class MexcMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField()
+    unique_token = models.BooleanField(blank=False, null=False, default=False)
 
     class Meta:
         managed = False
@@ -226,6 +234,7 @@ class HitbtcMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField()
+    unique_token = models.BooleanField(blank=False, null=False, default=False)
 
     class Meta:
         managed = False
@@ -237,6 +246,7 @@ class HotbitMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField()
+    unique_token = models.BooleanField(blank=False, null=False, default=False)
 
     class Meta:
         managed = False
@@ -248,6 +258,7 @@ class IdexMarket(models.Model):
     token = models.CharField(max_length=30, blank=True, null=True)
     tsymbol = models.CharField(max_length=100, blank=True, null=True)
     is_active = models.BooleanField()
+    unique_token = models.BooleanField(blank=False, null=False, default=False)
 
     class Meta:
         managed = False
