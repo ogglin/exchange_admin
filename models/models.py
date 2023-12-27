@@ -327,6 +327,7 @@ class Setting(models.Model):
     amm_percent = models.FloatField(help_text='процент биржи')
     uni_percent = models.FloatField(help_text='процент uniswap')
     candle_timer = models.FloatField(help_text='время заморозки показа свечи в секундах')
+    fee = models.BooleanField(help_text='комиссия', default=False)
 
     class Meta:
         managed = False
