@@ -221,5 +221,5 @@ class TickersMexcAdmin(admin.ModelAdmin):
 
 @admin.register(TransferCheck)
 class TransferCheckAdmin(admin.ModelAdmin):
-    list_display = ('contract', 'label', 'exchanger')
+    list_display = ('contract', 'label', 'decimals', 'exchanger')
     search_fields = ('contract', 'label',)

@@ -504,6 +504,7 @@ class TransferCheck(models.Model):
     contract = models.CharField(max_length=100, blank=False, null=False)
     label = models.CharField(max_length=100, blank=False, null=False)
     exchanger = models.BooleanField(blank=False, null=False, default=False)
+    decimals = models.IntegerField(blank=False, null=False, default=0)
 
     class Meta:
         managed = False
