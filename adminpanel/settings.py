@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-fc%(u##)wa5#38ve0okeds=zmff_236qz9xf_p&8+gu+p&dkbb
 DEBUG = True
 
 ALLOWED_HOSTS = ['*', 'xc.vp4.ru', 'exc.vp4.ru', 'xcadmin.vp4.ru', 'localhost', '127.0.0.1', '[::1]', 'localhost:4200']
-
+CSRF_TRUSTED_ORIGINS = ['http://xcadmin.vp4.ru', 'http://www.xcadmin.vp4.ru']
 
 # Application definition
 
@@ -72,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'adminpanel.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -86,7 +85,6 @@ DATABASES = {
         'PORT': 55432
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -106,7 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -119,7 +116,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
