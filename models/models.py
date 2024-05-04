@@ -509,3 +509,18 @@ class TransferCheck(models.Model):
     class Meta:
         managed = False
         db_table = 'transfer_check'
+
+
+class WalletsCheck(models.Model):
+    wallet = models.CharField(max_length=100, blank=False, null=False)
+    usdt = models.BooleanField(blank=False, null=False, default=False)
+    usdc = models.BooleanField(blank=False, null=False, default=False)
+    eth = models.BooleanField(blank=False, null=False, default=False)
+    weth = models.BooleanField(blank=False, null=False, default=False)
+    contracts_for_check = models.CharField(max_length=100, blank=False, null=False)
+    note = models.CharField(max_length=100, blank=False, null=False)
+    update_date = models.DateTimeField(blank=False, null=False)
+
+    class Meta:
+        managed = False
+        db_table = 'wallets_check'

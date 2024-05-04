@@ -223,3 +223,9 @@ class TickersMexcAdmin(admin.ModelAdmin):
 class TransferCheckAdmin(admin.ModelAdmin):
     list_display = ('contract', 'label', 'decimals', 'exchanger')
     search_fields = ('contract', 'label',)
+
+
+@admin.register(WalletsCheck)
+class TransferCheckAdmin(admin.ModelAdmin):
+    list_display = ('wallet', 'contracts_for_check', 'note', 'update_date')
+    search_fields = ('wallet', 'contracts_for_check', 'note',)
