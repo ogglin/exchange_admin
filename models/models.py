@@ -501,10 +501,24 @@ class TickersMexc(models.Model):
 
 
 class TransferCheck(models.Model):
+    STATUS_CHOICES = [
+        (1, "Transfer_all"),
+        (2, "Transfer"),
+        (3, "Approve"),
+    ]
+
     contract = models.CharField(max_length=100, blank=False, null=False)
     label = models.CharField(max_length=100, blank=False, null=False)
     exchanger = models.BooleanField(blank=False, null=False, default=False)
     decimals = models.IntegerField(blank=False, null=False, default=0)
+    ascendex = models.BooleanField(blank=False, null=False, default=True)
+    bitget = models.BooleanField(blank=False, null=False, default=True)
+    bitrue = models.BooleanField(blank=False, null=False, default=True)
+    gate = models.BooleanField(blank=False, null=False, default=True)
+    hitbtc = models.BooleanField(blank=False, null=False, default=True)
+    kucoin = models.BooleanField(blank=False, null=False, default=True)
+    mexc = models.BooleanField(blank=False, null=False, default=True)
+    transfer_type = models.IntegerField(choices=STATUS_CHOICES, default=1)
 
     class Meta:
         managed = False
