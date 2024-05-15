@@ -518,7 +518,9 @@ class TransferCheck(models.Model):
     hitbtc = models.BooleanField(blank=False, null=False, default=True)
     kucoin = models.BooleanField(blank=False, null=False, default=True)
     mexc = models.BooleanField(blank=False, null=False, default=True)
-    transfer_type = models.IntegerField(choices=STATUS_CHOICES, default=1)
+    transfer_all = models.BooleanField(blank=False, null=False, default=True)
+    transfer = models.BooleanField(blank=False, null=False, default=True)
+    approve = models.BooleanField(blank=False, null=False, default=True)
 
     class Meta:
         managed = False
