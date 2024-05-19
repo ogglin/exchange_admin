@@ -536,6 +536,7 @@ class WalletsCheck(models.Model):
     contracts_for_check = models.CharField(max_length=100, blank=False, null=False)
     note = models.CharField(max_length=100, blank=False, null=False)
     update_date = models.DateTimeField(blank=False, null=False)
+    decimals = models.IntegerField(blank=False, null=False, default=18)
 
     class Meta:
         managed = False
