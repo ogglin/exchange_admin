@@ -142,6 +142,19 @@ class BkexMarket(models.Model):
         db_table = 'bkex_markets'
 
 
+class CoinexMarket(models.Model):
+    market = models.CharField(max_length=30, blank=True, null=True)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField(blank=True, null=True)
+    unique_token = models.BooleanField(blank=False, null=False, default=False)
+    calculate = models.BooleanField(blank=False, null=False, default=False)
+
+    class Meta:
+        managed = False
+        db_table = 'coinex_markets'
+
+
 class GateMarket(models.Model):
     market = models.CharField(max_length=30, blank=True, null=True)
     token = models.CharField(max_length=30, blank=True, null=True)
