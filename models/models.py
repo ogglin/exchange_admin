@@ -289,6 +289,19 @@ class IdexMarket(models.Model):
         db_table = 'idex_markets'
 
 
+class MarketsBybit(models.Model):
+    market = models.CharField(max_length=30, blank=True, null=True)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField(blank=True, null=True)
+    unique_token = models.BooleanField(blank=False, null=False, default=False)
+    calculate = models.BooleanField(blank=False, null=False, default=False)
+
+    class Meta:
+        managed = False
+        db_table = 'markets_bybit'
+
+
 class PoolsSushi(models.Model):
     pool_contract = models.CharField(max_length=500)
     token0_contract = models.CharField(max_length=500)
@@ -478,6 +491,17 @@ class TickersBitget(models.Model):
     class Meta:
         managed = False
         db_table = 'tickers_bitget'
+
+
+class TickersBybit(models.Model):
+    market = models.CharField(max_length=30, blank=True, null=True)
+    token = models.CharField(max_length=30, blank=True, null=True)
+    tsymbol = models.CharField(max_length=100, blank=True, null=True)
+    is_active = models.BooleanField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'tickers_bybit'
 
 
 class TickersGate(models.Model):

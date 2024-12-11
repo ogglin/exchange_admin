@@ -30,11 +30,11 @@ class GateMarketsAdmin(admin.ModelAdmin):
     actions = [activate, deactivate]
 
 
-@admin.register(BkexMarket)
-class BkexMarketsAdmin(admin.ModelAdmin):
-    list_display = ('market', 'token', 'tsymbol', 'is_active')
-    search_fields = ('market', 'tsymbol',)
-    actions = [activate, deactivate]
+# @admin.register(BkexMarket)
+# class BkexMarketsAdmin(admin.ModelAdmin):
+#     list_display = ('market', 'token', 'tsymbol', 'is_active')
+#     search_fields = ('market', 'tsymbol',)
+#     actions = [activate, deactivate]
 
 
 @admin.register(GateMarket)
@@ -51,11 +51,11 @@ class KucoinMarketsAdmin(admin.ModelAdmin):
     actions = [activate, deactivate]
 
 
-@admin.register(BilaxyMarket)
-class BilaxyMarketsAdmin(admin.ModelAdmin):
-    list_display = ('market', 'token', 'tsymbol', 'is_active')
-    search_fields = ('market', 'tsymbol',)
-    actions = [activate, deactivate]
+# @admin.register(BilaxyMarket)
+# class BilaxyMarketsAdmin(admin.ModelAdmin):
+#     list_display = ('market', 'token', 'tsymbol', 'is_active')
+#     search_fields = ('market', 'tsymbol',)
+#     actions = [activate, deactivate]
 
 
 @admin.register(CoinexMarket)
@@ -143,15 +143,22 @@ class HitbtcMarketsAdmin(admin.ModelAdmin):
     actions = [activate, deactivate]
 
 
-@admin.register(HotbitMarket)
-class HotbitMarketsAdmin(admin.ModelAdmin):
-    list_display = ('market', 'token', 'tsymbol', 'is_active')
-    search_fields = ('market', 'tsymbol',)
-    actions = [activate, deactivate]
+# @admin.register(HotbitMarket)
+# class HotbitMarketsAdmin(admin.ModelAdmin):
+#     list_display = ('market', 'token', 'tsymbol', 'is_active')
+#     search_fields = ('market', 'tsymbol',)
+#     actions = [activate, deactivate]
 
 
-@admin.register(IdexMarket)
-class IdexMarketsAdmin(admin.ModelAdmin):
+# @admin.register(IdexMarket)
+# class IdexMarketsAdmin(admin.ModelAdmin):
+#     list_display = ('market', 'token', 'tsymbol', 'is_active')
+#     search_fields = ('market', 'tsymbol',)
+#     actions = [activate, deactivate]
+
+
+@admin.register(MarketsBybit)
+class MarketsBybitAdmin(admin.ModelAdmin):
     list_display = ('market', 'token', 'tsymbol', 'is_active')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
@@ -200,6 +207,13 @@ class TickersBitgetAdmin(admin.ModelAdmin):
 
 @admin.register(TickersBitrue)
 class TickersBitrueAdmin(admin.ModelAdmin):
+    list_display = ('market', 'token', 'tsymbol', 'is_active')
+    search_fields = ('market', 'tsymbol',)
+    actions = [activate, deactivate]
+
+
+@admin.register(TickersBybit)
+class TickersBybit(admin.ModelAdmin):
     list_display = ('market', 'token', 'tsymbol', 'is_active')
     search_fields = ('market', 'tsymbol',)
     actions = [activate, deactivate]
