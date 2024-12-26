@@ -9,6 +9,13 @@ from .models import *
 from .admin_utils import activate, deactivate
 
 
+@admin.register(ABI)
+class ABIAdmin(admin.ModelAdmin):
+    list_display = ('title', 'address', 'abi')
+    search_fields = ('title', 'address')
+    actions = ['activate', 'deactivate']
+
+
 @admin.register(AscendexMarket)
 class AscendexMarketsAdmin(admin.ModelAdmin):
     list_display = ('market', 'token', 'tsymbol', 'is_active')

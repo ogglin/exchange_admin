@@ -7,8 +7,21 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 import datetime
 
+from django.db.models import Index
 from django.utils import timezone
 from django.db import models
+
+
+
+class ABI(models.Model):
+    address = models.CharField(max_length=42, blank=False, null=False)
+    abi = models.JSONField(blank=False, null=False)
+    title = models.CharField(max_length=100, blank=False, null=False)
+
+    class Meta:
+        indexes = [
+            Index(fields=['abi'], name='abi_idx')
+        ]
 
 
 class AscendexMarket(models.Model):
