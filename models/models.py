@@ -12,16 +12,22 @@ from django.utils import timezone
 from django.db import models
 
 
-
-class ABI(models.Model):
+class Abi(models.Model):
     address = models.CharField(max_length=42, blank=False, null=False)
-    abi = models.JSONField(blank=False, null=False)
+    abi = models.TextField(blank=False, null=False)
     title = models.CharField(max_length=100, blank=False, null=False)
+    decimals = models.IntegerField(blank=False, null=False)
 
     class Meta:
         indexes = [
             Index(fields=['abi'], name='abi_idx')
         ]
+        managed = False
+        db_table = 'abi'
+        ordering = ['title']
+
+    def __str__(self):
+        return self.title
 
 
 class AscendexMarket(models.Model):
