@@ -86,6 +86,12 @@ class MexcMarketsAdmin(admin.ModelAdmin):
     actions = [activate, deactivate]
 
 
+@admin.register(Exception)
+class ExceptionsAdmin(admin.ModelAdmin):
+    list_display = ('exchange', 'tokens', 'from_exchange',)
+    search_fields = ('exchange',)
+
+
 @admin.register(Setting)
 class SettingsAdmin(admin.ModelAdmin):
     list_display = ('alert_usdt', 'amm_percent', 'uni_percent', 'candle_timer', 'hide_volume_usd', 'max_volume_usd',

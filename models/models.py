@@ -282,6 +282,16 @@ class DjangoSession(models.Model):
         db_table = 'django_session'
 
 
+class Exception(models.Model):
+    exchange = models.CharField(max_length=100, blank=False, null=False)
+    tokens = models.TextField('Tokens', blank=True)
+    from_exchange = models.BooleanField(blank=False, null=False, default=False)
+
+    class Meta:
+        managed = False
+        db_table = 'exceptions'
+
+
 class HitbtcMarket(models.Model):
     market = models.CharField(unique=True, max_length=30)
     token = models.CharField(max_length=30, blank=True, null=True)
